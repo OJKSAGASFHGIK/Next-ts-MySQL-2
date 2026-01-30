@@ -1,0 +1,4 @@
+pnpm create next-app@latest my-app-test --yes
+
+=== Note: ===
+This will install TypeScript, Tailwind, ESLint, App Router, and Turbopack, with import alias @/*
