@@ -11,13 +11,14 @@ export default function Home() {
     const fetchBooks = async() => {
       try {
         const res = await axios.get("http://localhost:8800/books");
-        console.log(res);
+        console.log(res.data);
       } catch(err){
         console.log(err);
       }
-      fetchBooks()
-    }
-  })
+    };
+    
+    fetchBooks();
+  }, []);
 
   return (
       <Layout>
