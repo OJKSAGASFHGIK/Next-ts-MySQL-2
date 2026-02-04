@@ -1,5 +1,6 @@
 import express from "express";
 import mysql from "mysql2";
+import cors from "cors";
 
 const app = express();
 
@@ -11,7 +12,7 @@ const db = mysql.createConnection({
     database: "next-ts-mysql"
 });
 app.use(express.json()); // allows client send data to backend
-
+app.use(cors());
 
 // http://localhost:8800/
 app.get("/", (req, res)=>{
