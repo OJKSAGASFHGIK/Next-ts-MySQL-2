@@ -9,6 +9,7 @@ export default function Home() {
     id: number;
     title: string;
     desc: string;
+    price: number;
     cover: string;
   }
   const [books, setBooks] = useState<books[]>([]);
@@ -32,6 +33,9 @@ export default function Home() {
           <div key={book.id}>
             {book.cover && <img src={book.cover} alt="" />}
             <h2>{book.title}</h2>
+            <p>{book.desc}</p>
+            <p>{book.price}</p>
+            <br/>
           </div>
         ))}
       </Layout>
