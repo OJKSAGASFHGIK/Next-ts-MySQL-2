@@ -5,6 +5,8 @@ import { use, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import Layout from "../../layout/page";
+
 type Book = {
   title: string;
   desc: string;
@@ -45,7 +47,7 @@ export default function BookUpdate( props: {params: Promise<{ id: string }>;} ){
       }
   }
 
-  return (
+  return (<Layout>
     <div className="form">
       <h1>Update the Book</h1>
       <input
@@ -76,5 +78,5 @@ export default function BookUpdate( props: {params: Promise<{ id: string }>;} ){
       {error && "Something went wrong!"}
       <Link href="/">See all books</Link>
     </div>
-  );
+  </Layout>);
 }

@@ -1,10 +1,11 @@
 "use client";
 
+import axios from "axios";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import Layout from "./pages/layout/page";
-import axios from "axios";
 
 export default function Home() {
   type books = {
@@ -57,14 +58,14 @@ export default function Home() {
               </div>
 
               <div className="flex w-full justify-between">
-                <Link href={`http://localhost:3000/pages/update/${book.id}`} className="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 transition cursor-pointer">Update</Link>
+                <Link href={`/pages/update/${book.id}`} className="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 transition cursor-pointer">Update</Link>
                 <button onClick={() => handleDelete(book.id)} className="px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700 transition cursor-pointer">Delete</button>
               </div>
             </div>
           ))}
           </div>
 
-          <button>Add new book</button>
+          <Link href="/pages/add">Add new book</Link>
         </section>
       </Layout>
     );

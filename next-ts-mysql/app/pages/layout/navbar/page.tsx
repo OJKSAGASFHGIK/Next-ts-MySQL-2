@@ -1,3 +1,7 @@
+import Link from "next/link"
+
 export default function navbar(){
-    return(<div className="bg-red-500">Greque Bookshop</div>)
+    return(<>
+        <Link href="/"><h1>Home</h1></Link>
+    </>)
 }

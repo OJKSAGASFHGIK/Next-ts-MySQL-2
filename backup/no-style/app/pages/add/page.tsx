@@ -1,7 +1,10 @@
 "use client";   
 import axios from "axios";
+
 import { useState } from "react"
 import { useRouter } from "next/navigation";
+
+import Layout from "../layout/page";
 
 export default function add(){
     const [book, setBook] = useState({
@@ -25,7 +28,7 @@ export default function add(){
             navigate.push("/");
         } catch(err){ console.log(err) }
     }
-    return(<>
+    return(<Layout>
         <div className="form">
             <h1>Add Book</h1>
             <input name="title" type="text" onChange={handleChange} placeholder="title" />
@@ -34,5 +37,5 @@ export default function add(){
             {/* <input name="cover" type="text" onChange={handleChange} placeholder="cover" /> */}
             <button className="cursor-pointer" onClick={handleClick}>Add</button>
         </div>
-    </>)
+    </Layout>)
 }
